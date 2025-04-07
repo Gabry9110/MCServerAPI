@@ -65,9 +65,10 @@ func stop(c *gin.Context) {
 	if err != nil {
 		fmt.Println(err.Error())
 		c.String(http.StatusInternalServerError, "Server Error :(\n")
+		return
 	}
 
-	c.String(http.StatusOK, "Server stopped! :D")
+	c.String(http.StatusOK, "Server stopped! :D\n")
 }
 
 func monitorPlayersAndShutdown() {
