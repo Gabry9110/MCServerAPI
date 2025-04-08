@@ -1,0 +1,15 @@
+[Unit]
+Description=MCServerAPI Server
+After=network.target
+
+[Service]
+ExecStart=/srv/minecraft/MCServerAPI
+
+# Replace with the user/group that should execute the server, keep in mind that only root can open well-known ports like 80 or 443
+User=minecraft
+Group=minecraft
+
+WorkingDirectory=/srv/minecraft
+
+[Install]
+WantedBy=multi-user.target
